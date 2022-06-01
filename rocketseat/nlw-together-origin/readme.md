@@ -44,3 +44,62 @@ na parte da imagem, foi utilizado uma pseudo-classe, chamada de ::before, onde f
 o segredo em deixar ela por trás da imagem, se da ao position relative e z-index.
 é necessário também usar bem a cabeça, na hora de calcular a posição da caixa.
 
+# Anotações sobre a aula 2
+
+## HTML
+
+### Estrutura HTML
+Foi inserido um novo link, agora para compor alguns ícones no nosso trabalho, diretamente do <a href="https://icomoon.io/"> Icomoon</a>.
+
+Adicionamos também duas novas seções, uma referente ao conteúdo "SOBRE" onde possui uma estrutura bem parecida com a "HOME", e também uma sessão "SERVIÇOS" que apesar de ser bem parecida com a anterior, é composta também por alguns cards, que foram estilizados de uma forma bem interessante.
+
+No final do body, inserimos um link para os script do JavaScript.
+
+Irei deixar como lembrete, quando finalizar o projeto do OriginSix, voltar para esse Documento HTML e estudar novamente, o Professor Mayk utilizou muitos id e classes nas tags, principalmente nas semânticas.
+E eu gostaria de entender perfeitamente o motivo do porquê.
+
+## CSS
+
+### Estrutura CSS
+
+Novamente, essa é a parte onde a magia aconteceu, o CSS foi recheado de novas informações interessantes, inclusive animações foram feitas através do CSS. Achei fantástico.
+
+Começando então na ordem que o documento esta disposto.
+
+Durante a aula 2 foi proposto embelezar o menu, aplicar animações, ícones e fazer as sessões de "SOBRE" e "SERVIÇOS".
+
+Primeiro aplicamos no seletor de lista uma configuração de list-style, para retirar os marcadores para none.
+
+Logo abaixo, realizamos também uma configuração em toda a página. Através do seletor `html{}` foi possível aplicar uma propriedade chamada *scroll-behavior: smooth*, essa propriedade faz com que a movimentação dentro da página utilizando o scroll ou o index do menu, seja suave e agradável.
+
+Durante a criação e estilização do menu, foi feito uma animação, para que quando o mouse ficasse sobre o menu, iria aparecer uma listra abaixo do item. Foi realmente interessante o jeito que o professor fez isso.
+
+Basicamente, foi feito através da pseudo-classe after, ele criou uma listra, de 2px de altura, e a animação da largura iria transicionar de 0% até 100%, quando o hover fosse ativado.
+O segredo do posicionamento foi os position absolute do after, que ficou absoluto em relação a classe pai dela, que seria o `nav ul li a` então com os posicionamento de left e bottom, foi posta diretamente abaixo da ancora.
+Achei muito massa de fazer isso.
+
+A parte do Toggle é uma sacada bem interessante também, a função do toggle basicamente é como se fosse um interruptor, onde quando clicamos no hambúrguer do menu, ele vai se estender e preencher a tela toda, quando apertar em alguma opção do menu ou no X, ele deve fechar a janela do menu e voltar para o nosso site.
+
+Essa parte vou explicar melhor com o JavaScript, mas no geral as sessões que foram feitas, tiveram uma configuração bem parecida com as anteriores.
+
+## JavaScript
+
+### Estrutura JavaScript
+
+A primeira introdução ao JavaScript foi bem bacana, é bem complicado chegar de paraquedas e entender de fato como funciona um algoritmo, mas com a prática a gente se acostuma, preciso entender melhor como funciona o DOM, mas vamos focar no que foi preparado na aula.
+
+A primeira funcionalidade foi fazer o toggle funcionar. Então, através do DOM, conseguimos guardar em variáveis os elementos dentro de nav, e também uma lista dos elementos que possuem o id toggle.
+
+Em seguida, foi utilizado um bloco de repetição, o for para percorrer a lista de elementos com toggle. quando encontrasse um elemento, ia disparar um Event Listener, basicamente é um ouvinte de eventos, sempre que acontecer um evento naquela tag, ele é acionado.
+O Evento que estamos esperando é um click, sempre que se clicar em um elemento do toggle, iremos atribuir ao nav a classe "show".
+Então basicamente é isso que acontece: clicamos no hambúrguer e acionamos o evento, a nav que antes não tinha a classe show, passa a ter, e a classe show foi estilizada para preencher toda a viewport, e mostrar o menu todo bonito.
+quando clicamos novamente no outro elemento toggle, que é o X, a tag nav remove a classe "show", voltando ao site normal.
+
+O próximo passo foi fazer com que ao clicar em um item do menu, o menu sumia e direcionava o usuário para o local especificado.
+
+para isso foi necessário guardar a referencia a todos os links, com o DOM também.
+Depois foi a mesma ideia anterior, sempre que o event listener detectava um click em algum dos links, ele removia a classe show da nav e o site voltava ao normal, e o direcionamento do link levou o usuário ate a seção escolhida.
+
+A ultima parte do JavaScript foi fazer com que ao utilizar o scroll, a barra de rolagem, fosse criado uma sombra no header da página.
+Para isso foi utilizado o DOM, e uma das variadas funções dele, detectar a altura do header, depois disso foi um simples "if" para detectar se barra de rolagem no eixo Y, scrollY fosse maior que a altura do header, significava que a rolagem começou e então aplicava uma classe no header, chamada de scroll. que no CSS aplicava a sombra.
+Caso o resultado fosse menor que a altura do header, removia a classe scroll do header.
