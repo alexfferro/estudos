@@ -1,5 +1,4 @@
 .button {
-    margin-top: 4rem;
     height: 3rem;
     border-radius: 0.5rem;
     font-weight: 500;
@@ -10,6 +9,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 
     cursor: pointer;
     border: 0;
