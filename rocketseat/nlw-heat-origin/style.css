@@ -22,9 +22,10 @@ body {
 }
 
 main{
-  background: url(imagens/mobile.svg);
-  width: 375px;
-  height: 812px;
+  background: url(imagens/mobile.svg) no-repeat center/cover;
+  width: 100vw;
+  height: 100vh;
+  min-height: 812px;
 }
 
 .container {
@@ -77,4 +78,15 @@ ul {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
+}
+
+
+/* Animações nos Botoes do link */
+
+@media (min-width: 720px) {
+  /* Tablet */
+}
+
+@media (min-width: 960px) {
+  /* Desktop */
 }
