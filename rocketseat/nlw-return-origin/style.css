@@ -2,8 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'DM Sans', sans-serif;
-  -webkit-font-smoothing: antialiased;
+
 }
 :root{
   --primary-color: hsl(170, 100%, 26%);
@@ -12,31 +11,57 @@
   --primary-hover: hsl(170, 100%, 14%);
   --headline: hsl(210, 11%, 15%);
   --paragraph: hsl(210, 9%, 31%);
+
+  --nav-height: 4.5rem;
 }
 
-
+html, body{
+  height: 100%;
+  width: 100%;
+}
 body{
   text-align: center;
+  font-family: 'DM Sans', sans-serif;
+  -webkit-font-smoothing: auto;
+  overflow: overlay;
 }
 
-/* ---------------- HEADER ------------------- */
+.wrapper {
+  width: 23.4375rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+ul{
+  list-style: none;
+}
+/*---------------- HEADER -------------------*/
 
 header{
-  max-width: 23.4375rem;
-  margin: 2.5625rem auto 0;
-  background: var(--primary-light);
+  margin-top: calc(2.5625rem + var(--nav-height));
+}
+header::before{
+  content: " ";
+  width: 100%;
+  height: calc(67.5rem + var(--nav-height));
+  display: block;
+  background-color: var(--primary-light);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index:-1;
 }
 
-h4{
-  color: var(--primary-color);
-  font-size: 0.875rem;
-}
-
-h1{
+header h1{
   font-size: 2.125rem;
   color: var(--headline);
   line-height: 2.75rem;
   margin-top: 1rem;
+}
+
+header h4{
+  color: var(--primary-color);
+  font-size: 0.875rem;
 }
 
 header p{
@@ -46,7 +71,7 @@ header p{
   margin-top: 1.5rem;
 }
 
-button{
+header button{
   background: var(--primary-color);
   color: var(--primary-beige);
   border: none;
@@ -62,9 +87,175 @@ button{
   margin: 2rem auto 3.75rem;
 }
 
+header >img {
+  width:16.5rem;
+  display: block;
+  margin-inline: auto;
+}
+/*---------------- HEADER -------------------*/
 
-h3{
-  font-size: 3rem;
+/* -------------------------  STATISTICS ------------------------- */
+
+.stats{
+  width: 20.4375rem;
+  padding-block: 2.5rem;
+  margin-inline: auto;
+  
+  background-color: var(--primary-beige);
+  
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  gap: 3.75rem;
+
+  border-radius: 6px;
+  border: 1px solid var(--primary-light);
+  
 }
 
-/* ---------------- HEADER ------------------- */
+.stat h3{
+  font-size: 3rem;
+  line-height: 3.9rem;
+}
+.stat p {
+  margin-top:4px;
+  line-height: 1.5rem;
+  color: var(--primary-color);
+}
+/* -------------------------  STATISTICS ------------------------- */
+
+/* -------------------------  NAVIGATION ------------------------- */
+nav {
+  display: flex;
+
+  height: var(--nav-height);
+
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+nav .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav.scroll{
+  background: var(--primary-color);
+  width: 100vw;
+}
+
+nav.scroll svg:nth-child(1) path {
+  fill: white;
+}
+nav.scroll button path {
+  stroke: white;
+}
+
+nav button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+/* -------------------------  NAVIGATION ------------------------- */
+
+
+/* -------------------------  MENU-EXPANDED ------------------------- */
+body.menu-expanded {
+  overflow: hidden;
+}
+
+body.menu-expanded >:not(nav) {
+  display: none;
+}
+
+body.menu-expanded .logo,
+body.menu-expanded button{
+  position: relative;
+  z-index: 10;
+}
+
+body.menu-expanded .logo path {
+  fill: #fff;
+}
+
+
+body.menu-expanded button path {
+  fill: #fff;
+}
+
+.menu,
+.close-menu,
+body.menu-expanded .open-menu{
+  opacity: 0;
+  visibility: hidden;
+}
+
+body.menu-expanded .menu,
+body.menu-expanded .close-menu{
+  opacity: 1;
+  visibility: visible;
+}
+
+body.menu-expanded .menu{
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  background-color: var(--primary-color);
+
+  width: 100vw;
+  height: 100vh;
+
+  padding-top: var(--nav-height);
+}
+
+body.menu-expanded nav{
+  position: relative;
+}
+
+.menu ul:nth-child(1){
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 3.75rem;
+
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.9rem;
+
+}
+
+.menu ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu .button{
+  background: #fff;
+  border-radius: 2.5rem;
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.43rem;
+  text-decoration: none;
+  text-decoration: uppercase;
+
+  color: var(--primary-color);
+
+  display: inline-block;
+  padding: 1rem 2rem;
+
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+  
+}
+
+.social-links{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+/* -------------------------  MENU-EXPANDED ------------------------- */
