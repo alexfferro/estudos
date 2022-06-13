@@ -9,10 +9,17 @@
   --primary-light: hsl(148, 23%, 89%);
   --primary-beige: hsl(39, 100%, 97%);
   --primary-hover: hsl(170, 100%, 14%);
+  --bg-light: hsl(180, 14%, 97%);
   --headline: hsl(210, 11%, 15%);
   --paragraph: hsl(210, 9%, 31%);
 
   --nav-height: 4.5rem;
+}
+
+/* -------------------------  GERAL ------------------------- */
+
+html {
+  scroll-behavior: smooth;
 }
 
 html, body{
@@ -24,6 +31,7 @@ body{
   font-family: 'DM Sans', sans-serif;
   -webkit-font-smoothing: auto;
   overflow: overlay;
+  background: var(--bg-light);
 }
 
 .wrapper {
@@ -35,94 +43,44 @@ body{
 ul{
   list-style: none;
 }
-/*---------------- HEADER -------------------*/
 
-header{
-  margin-top: calc(2.5625rem + var(--nav-height));
-}
-header::before{
-  content: " ";
-  width: 100%;
-  height: calc(67.5rem + var(--nav-height));
-  display: block;
-  background-color: var(--primary-light);
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index:-1;
+img {
+  max-width: 100%;
 }
 
-header h1{
+section {
+  padding-block: 6.25rem;
+}
+
+section header h1 {
   font-size: 2.125rem;
   color: var(--headline);
   line-height: 2.75rem;
-  margin-top: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-header h4{
-  color: var(--primary-color);
+section header h2 {
+  font-size: 1.875rem;
+  line-height: 2.43rem;
+  color: var(--headline);
+}
+
+section header h4 {
   font-size: 0.875rem;
-}
-
-header p{
-  font-size: 1.125rem;
-  color:var(--paragraph);
-  line-height: 1.6875rem;
-  margin-top: 1.5rem;
-}
-
-header button{
-  background: var(--primary-color);
-  color: var(--primary-beige);
-  border: none;
-  border-radius: 2.5rem;
-  height: 3.25rem;
-  width: 16.4375rem;
-  font-weight: bold;
+  line-height: 150%;
+  letter-spacing: 0.08rem;
   text-transform: uppercase;
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  align-items: center;
-  margin: 2rem auto 3.75rem;
-}
-
-header >img {
-  width:16.5rem;
-  display: block;
-  margin-inline: auto;
-}
-/*---------------- HEADER -------------------*/
-
-/* -------------------------  STATISTICS ------------------------- */
-
-.stats{
-  width: 20.4375rem;
-  padding-block: 2.5rem;
-  margin-inline: auto;
-  
-  background-color: var(--primary-beige);
-  
-  display: flex;
-  flex-direction:column;
-  justify-content: center;
-  gap: 3.75rem;
-
-  border-radius: 6px;
-  border: 1px solid var(--primary-light);
-  
-}
-
-.stat h3{
-  font-size: 3rem;
-  line-height: 3.9rem;
-}
-.stat p {
-  margin-top:4px;
-  line-height: 1.5rem;
   color: var(--primary-color);
+  margin-bottom: 1rem;
 }
-/* -------------------------  STATISTICS ------------------------- */
+
+section .content p {
+  line-height: 150%;
+  color: var(--paragraph);
+}
+
+/* -------------------------  FIM GERAL ------------------------- */
+
 
 /* -------------------------  NAVIGATION ------------------------- */
 nav {
@@ -132,8 +90,9 @@ nav {
 
   position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  z-index: 100;
+
+  width: 100vw;
 }
 
 nav .wrapper {
@@ -144,10 +103,10 @@ nav .wrapper {
 
 nav.scroll{
   background: var(--primary-color);
-  width: 100vw;
+
 }
 
-nav.scroll svg:nth-child(1) path {
+nav.scroll .logo path {
   fill: white;
 }
 nav.scroll button path {
@@ -159,16 +118,14 @@ nav button {
   border: none;
   cursor: pointer;
 }
-/* -------------------------  NAVIGATION ------------------------- */
-
-
+/* -------------------------  FIM NAVIGATION ------------------------- */
 /* -------------------------  MENU-EXPANDED ------------------------- */
 body.menu-expanded {
   overflow: hidden;
 }
 
 body.menu-expanded >:not(nav) {
-  display: none;
+  visibility: hidden;
 }
 
 body.menu-expanded .logo,
@@ -180,7 +137,6 @@ body.menu-expanded button{
 body.menu-expanded .logo path {
   fill: #fff;
 }
-
 
 body.menu-expanded button path {
   fill: #fff;
@@ -199,6 +155,11 @@ body.menu-expanded .close-menu{
   visibility: visible;
 }
 
+/* ANIMAÇÃO PARA QUE O MENU ABRA DE CIMA PARA BAIXO */
+.menu {
+  transform: translateY(100%)
+}
+/* ANIMAÇÃO PARA QUE O MENU ABRA DE CIMA PARA BAIXO */
 body.menu-expanded .menu{
   position: fixed;
   top: 0;
@@ -210,10 +171,10 @@ body.menu-expanded .menu{
   height: 100vh;
 
   padding-top: var(--nav-height);
-}
-
-body.menu-expanded nav{
-  position: relative;
+/* ANIMAÇÃO PARA QUE O MENU ABRA DE CIMA PARA BAIXO */
+  transition: transform 300ms;
+  transform: translateY(0%)
+/* ANIMAÇÃO PARA QUE O MENU ABRA DE CIMA PARA BAIXO */
 }
 
 .menu ul:nth-child(1){
@@ -258,4 +219,128 @@ body.menu-expanded nav{
   align-items: center;
   gap: 2rem;
 }
-/* -------------------------  MENU-EXPANDED ------------------------- */
+/* -------------------------  FIM MENU-EXPANDED ------------------------- */
+
+/* ------------------------- HOME ------------------------- */
+
+#home{
+  padding-top: calc(2.5625rem + var(--nav-height));
+}
+#home::before{
+  content: " ";
+  width: 100%;
+  height: calc(67.5rem + var(--nav-height));
+  display: block;
+  background-color: var(--primary-light);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index:-100;
+}
+
+#home p{
+  font-size: 1.125rem;
+}
+
+#home button{
+  background: var(--primary-color);
+  color: var(--primary-beige);
+  border: none;
+  border-radius: 2.5rem;
+  height: 3.25rem;
+  width: 16.4375rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto 3.75rem;
+}
+
+#home img {
+  width: 16.5rem;
+  display: block;
+  margin-inline: auto;
+}
+/* ------------------------- FIM HOME ------------------------- */
+
+/* -------------------------  STATISTICS ------------------------- */
+
+.stats{
+  width: 20.4375rem;
+  padding-block: 2.5rem;
+  margin-inline: auto;
+  
+  background-color: var(--primary-beige);
+  
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  gap: 3.75rem;
+
+  border-radius: 6px;
+  border: 1px solid var(--primary-light);
+  
+}
+
+.stat h3{
+  font-size: 3rem;
+  line-height: 3.9rem;
+}
+.stat p {
+  margin-top:4px;
+  line-height: 1.5rem;
+  color: var(--primary-color);
+}
+/* -------------------------  FIM STATISTICS ------------------------- */
+
+/* -------------------------  SERVICES ------------------------- */
+#services header h2 {
+  margin-bottom: 3.75rem;
+}
+
+#services .cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+#services .card {
+  padding: 1.5rem;
+  text-align: left;
+
+  background: white;
+
+  border: 1px solid var(--primary-light);
+  border-radius: .375rem;
+}
+
+#services .card h3{
+  margin-block: 1rem;
+  font-size: 1.5rem;
+  line-height: 1.937rem;
+}
+
+/* -------------------------  FIM SERVICES ------------------------- */
+
+/* -------------------------  ABOUT ------------------------- */
+#about {
+  text-align: left;
+  background-color: var(--primary-beige);
+}
+
+#about header h2{
+  margin-bottom: 1.5rem;
+}
+
+#about .content p {
+  margin-top: 1.5rem;
+  margin-bottom: 3.75rem;
+}
+/* -------------------------  FIM ABOUT ------------------------- */
+
+/* -------------------------  CONTACT ------------------------- */
+
+
+/* -------------------------  FIM CONTACT ------------------------- */
