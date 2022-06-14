@@ -1,5 +1,11 @@
 {
   "cSpell.words": [
     "Letmeask"
+  ],
+  "cSpell.enableFiletypes": [
+    "jsx-tags",
+    "pip-requirements",
+    "prisma",
+    "tailwindcss"
   ]
 }
