@@ -1,0 +1,78 @@
+@charset "utf-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  --fonte-default: Verdana, Tahoma, sans-serif;
+  --font-title: 'Passion One', cursive;
+  --font-cordel: 'Sriracha', cursive;
+}
+
+body {
+  height: 100vh;
+  font-family: var(--fonte-default);
+}
+a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+header {
+  background: black;
+  color: white;
+  text-align: center;
+}
+header h1 {
+  padding-top: 2rem;
+  font-variant: small-caps;
+  font-family: var(--font-title);
+  font-size: 8vw;
+}
+header p {
+  padding-bottom: 2rem;
+}
+section {
+  padding-block: 10vh;
+  padding-left: 2rem;
+  line-height: 4rem;
+  font-family: var(--font-cordel);
+  font-size: 3.5vw;
+}
+.especial {
+  background: gray;
+  color: white;
+  box-shadow: inset 6px 6px 13px 0px rgba(0, 0, 0, 0.493);
+  background-size: cover;
+  background-attachment: fixed;
+}
+section > p { 
+  margin-bottom: 2rem;
+}
+.especial > p {
+  display: inline-block;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.400);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
+}
+
+#img01{
+  background-image: url(imagens/background001.jpg);
+  background-position: right center;
+
+}
+
+#img02{
+  background-image: url(imagens/background002.jpg);
+  background-position: right bottom;
+
+}
+
+footer {
+  padding: 0.4rem;
+  text-align: center;
+  color: white;
+  background: black;
+}
