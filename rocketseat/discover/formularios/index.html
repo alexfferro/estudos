@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulários</title>
+</head>
+<body>
+
+  <!-- 
+    input Atributos comuns
+    - autocomplete -> auto completa os dados, recomendado verificar a documentação
+    - autofocus -> só pode existir 1 ativo por página, automaticamente foca o componente.
+    - disabled -> como o nome sugere, desabilita o componente
+    - readonly -> parecido com o disabled, porém a aparência não fica opaca
+    - value -> determina um valor inicial no input
+    - form -> faz uma referencia ao componente a algum formulário. é necessário do id e do name do input.
+    - name -> necessário para linkar a algum formulário e receber informações no back-end.
+    - required -> torna o campo obrigatório.
+    - placeholder
+    - password -> inputmode="numeric" torna o campo um teclado numérico.
+
+    envio de arquivos múltiplos precisa do seguinte
+      <form method="post" enctype="multipart/form-data">
+        <input type="file">
+      </form>
+  -->
+
+  <!-- 
+    <input form="form-name" type="text" name="input-name">
+    <form id="form-name"></form> 
+  -->
+  <!-- <fieldset>
+    <legend>Choose your games</legend>
+    <div>
+      <input type="checkbox" name="games" id="lol" value="League of Legends">
+      <label for="lol">League of Legends</label>
+    </div>
+    <div>
+      <input type="checkbox" name="games" id="gla" value="Grandline Adventures">
+      <label for="gla">Grandline Adventures</label>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend> Bora tomar um café [?]</legend>
+    <input type="radio" name="coffe" id="yep" value="yes" checked>
+    <label for="yep"> Sim </label>
+    <input type="radio" name="coffe" id="nope" value="no">
+    <label for="nope"> Não </label>
+  </fieldset>
+
+  <div>
+    <label for="carSelect">Escolha seu carro</label>
+    <select name="carmodel" id="carSelect">
+      <option value="">Selecione o modelo</option>
+      <option value="fiat">UNO</option>
+      <option value="bmw">X6</option>
+    </select>
+  </div>
+  <form action="">
+    <input type="search" name="q" id="" placeholder="Digite sua pesquisa" aria-label="campo de pesquisa">
+    <button type="submit">Search</button>
+  </form>
+
+  <input type="range" min="0" max="100">
+
+  <input type="date">
+  <input type="time">
+  <input type="datetime-local" name="" id="">
+  <input type="month" name="" id="">
+  <input type="week" name="" id=""> -->
+
+  <form>
+    <fieldset>
+      <legend> Contato</legend>
+        <label for="form-name">Nome</label>
+        <div>
+          <input type="text" id="form-name" name="form-name">
+        </div>
+        <br>
+        <label for="form-email">Email</label>
+        <div>
+          <input type="email" name="form-email" id="form-email">
+        </div>
+        <br>
+        <label for="form-message">Message</label>
+        <div>
+          <textarea name="form-message" id="form-message" cols="30" rows="10"></textarea>
+        </div>
+        <br>
+        <button type="submit">Enviar</button>
+    </fieldset>
+  </form>
+</body>
+</html>
