@@ -1,0 +1,29 @@
+header{
+  display: flex;
+  justify-content: space-between;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  margin-inline: 2rem;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+nav ul {
+  display: flex;
+  gap: .8rem;
+  align-items: center;
+  font-weight: bold;
+  list-style: none;
+}
+
+nav ul li:last-child {
+  border-radius: .5rem;
+  padding: .6rem;
+  text-transform: capitalize;
+  background: blue;
+}
+nav ul li:last-child a {
+  color: white;
+}
