@@ -1,0 +1,19 @@
+*{
+  margin: 0;
+}
+
+body{
+  height: 100vh;
+  display: flex;
+}
+footer {
+  margin-top: auto;
+  background-color: lightgray;
+  
+  flex: 1;
+  height: 8rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

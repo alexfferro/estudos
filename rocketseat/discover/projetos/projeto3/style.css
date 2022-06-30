@@ -1,0 +1,22 @@
+body {
+  display: flex;
+  height: 80vh;
+  gap: 1rem;
+}
+
+aside {
+  border: 1px solid gray;
+  background: lightgray;
+  height: 80vh;
+  width: 100vw;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.432);
+  flex: 1;
+}
+
+main {
+  border: 1px solid gray;
+  height: 80vh;
+  width: 100vw;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.432);
+  flex: 3;
+}

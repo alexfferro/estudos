@@ -1,0 +1,21 @@
+button {
+  display: inline-flex;
+  gap: .5rem;
+  border: 1px solid;
+  border-radius: 1rem;
+  padding-inline: .5rem;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  line-height: 0;
+}
+
+button img{
+  width: 2rem;
+  height: 2rem;
+}
+
+button:hover{
+  cursor: pointer;
+  filter: brightness(0.8);
+}
