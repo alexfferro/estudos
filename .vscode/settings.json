@@ -7,5 +7,6 @@
     "pip-requirements",
     "prisma",
     "tailwindcss"
-  ]
+  ],
+  "docwriter.hotkey.windows": "Alt + ."
 }
