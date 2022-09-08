@@ -6,7 +6,7 @@ function imprimirDado(dado) {
 // imprimirDado(1)
 // imprimirDado('texto')
 // imprimirDado(true)
-// imprimirDado({nome: 'alex'})
+// imprimirDado({nome: 'Alex'})
 // imprimirDado([1, 2, 3])
 
 // é possível também executar uma função dentro de outra função.
