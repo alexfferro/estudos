@@ -1,0 +1,15 @@
+{
+  "name": "promisses",
+  "version": "1.0.0",
+  "description": "",
+  "main": "axios.js",
+  "scripts": {
+    "test": "node axios.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2"
+  }
+}
